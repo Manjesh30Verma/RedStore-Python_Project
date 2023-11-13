@@ -1,0 +1,56 @@
+{% extends 'adminhome.html' %}
+{% load static %}
+
+<!------------navbar----------------------->
+
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<center>
+<h1>View & Manage User Details </h1>
+
+<table class="table table-bordered" style="margin-top:60;">
+    <tr>
+        <th>RegId</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Gender</th>
+        <th>Info</th>
+        <th>Status</th>
+        <th>Action</th>
+        <th>Delete</th>
+    </tr>
+{% for row in uDetails %}
+<tr>
+    <td>{{row.regid}}</td>
+    <td>{{row.name}}</td>
+    <td>{{row.email}}</td>
+    <td>{{row.mobile}}</td>
+    <td>{{row.addrss}}</td>
+    <td>{{row.city}}</td>
+    <td>{{row.gender}}</td>
+    <td>{{row.info}}</td>
+    <td>{{row.status}}</td>
+    <td>
+        {% if row.status %}
+        <a href="/myadmin/manageuserstatus/?regid={{row.regid}}&s=block" style="color: orange;">Block</a>
+        {% else %}
+        <a href="/myadmin/manageuserstatus/?regid={{row.regid}}&s=verify"  style="color: green;">Verify</a>
+        {% endif %}
+    </td>
+    <td>
+        <a href="/myadmin/manageuserstatus/?regid={{row.regid}}&s=delete" style="color:red;">Delete</a>
+    </td>
+</tr>
+{% endfor %} 
+</table>   
+</center>
+{% endblock %}

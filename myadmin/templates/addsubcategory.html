@@ -1,0 +1,42 @@
+{% extends 'adminhome.html' %}
+{% load static %}
+
+{% block content %}
+<center>
+<h2>Add Sub Category Here!!</h2>
+<p style="color: blue;"><b>{{output}}</b></p>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  </head>
+
+<!-----------form start------------------->
+<div class="container d-flex align-items-centre justify-content-center">
+<form method="POST" enctype="multipart/form-data" action="/myadmin/addsubcategory/">
+{% csrf_token %}  
+    <div class="form-group">
+      <label for="Category"><b>Category Name:</b></label>
+      <select class="form-control" name="catname">
+        <option>Select Category</option>
+        {% for row in clist %}
+          <option>{{row.catname}}</option>>
+        {% endfor %}
+
+      </select> 
+    </div>
+    <div class="form-group">
+        <label for="subcatname"><b>Sub Category Name:</b></label>
+        <input type="text" class="form-control" name="subcatname">
+      </div>
+    <div class="form-group">
+      <label for="Categoryicon"><b>Sub Category Icon:</b></label>
+      <input type="file" class="form-control" name="subcaticonname">
+    </div>
+    <button type="submit" class="btn btn-success">Add Sub Category</button>
+</form>
+</div>
+<!---------form end------------------>
+</center>
+</body>
+</html>
+{%  endblock %}

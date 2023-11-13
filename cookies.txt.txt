@@ -1,0 +1,16 @@
+Cookies : It is a stprage capable to store data on client side, as this storage is on client end(ewb browser)
+hence  less secure. Cookies can be used for tracking purpose not for security implementations.
+
+
+Cookies Life Cycle :- browser on cookies on / brower off cookies off 
+
+     Client end                                     Server end
+
+            ----------------------------------->
+                          req
+            <-----------------------------------
+                          res + cookie
+            ----------------------------------->
+                          req + cookie
+
+ 

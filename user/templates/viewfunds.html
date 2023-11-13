@@ -1,0 +1,27 @@
+{% extends 'userhome.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<center>
+<h1> View & Manage Funds Details </h1>
+<table class="table table-bordered">
+    <tr>
+        <th>TxnID</th>
+        <th>UserID</th>
+        <th>Amount</th>
+        <th>Info</th>
+    </tr>
+    {% for row in fDetails %}
+    <tr>
+        <td>{{row.txnid}}</td>
+        <td>{{row.uid}}</td>
+        <td>{{row.amt}}</td>
+        <td>{{row.info}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</center>
+{% endblock %}

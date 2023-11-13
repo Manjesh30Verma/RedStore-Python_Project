@@ -1,0 +1,49 @@
+{% extends 'adminhome.html' %}
+{% load static %}
+
+{% block content %}
+<center>
+<h2>!! Products !!</h2>
+<p style="color: blue;"><b>{{output}}</b></p>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  </head>
+
+<!-----------form start------------------->
+<div class="container d-flex align-items-centre justify-content-center">
+<form method="POST" enctype="multipart/form-data" action="/myadmin/products/">
+{% csrf_token %}  
+    <div class="form-group">
+      <label for="title"><b>Title:</b></label>
+      <input type="text" class="form-control" name="title"> 
+    </div>
+    <div class="form-group">
+        <label for="subcatname"><b>Category Name:</b></label>
+        <select class="form-control" name="subcatname">
+          <option>Select Category</option>
+          {% for row in sclist %}
+            <option>{{row.subcatname}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description"><b>Description:</b></label>
+        <textarea class="form-control" name="description" rows="5"></textarea> 
+      </div>
+      <div class="form-group">
+        <label for="ldate"><b>Launch Date:</b></label>
+        <input type="date" class="form-control" name="ldate"> 
+      </div>
+      <div class="form-group">
+        <label for="title"><b>End Date:</b></label>
+        <input type="date" class="form-control" name="edate"> 
+      </div>
+    <button type="submit" class="btn btn-success">Add Products</button>
+</form>
+</div>
+<!---------form end------------------>
+</center>
+</body>
+</html>
+{%  endblock %}

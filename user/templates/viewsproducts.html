@@ -1,0 +1,39 @@
+{% extends 'userhome.html' %}
+
+{% block content %}
+
+<style>
+   #catmain
+   {
+    min-height:300px;
+    width:600px;
+   }
+   .catmain_part
+   {
+    height:150;
+    width:200;
+    float:left;
+   }
+   .catmain_part img
+   {
+    border:1px solid black;
+   }
+</style>
+<br>
+<h1>Your Products</h1>
+<center>
+<div id="catmain">
+{% for row in clist %}
+    <a href="/user/viewsubprod/?catname={{row.catname}}">    
+    <div class="catmain_part">
+       <img src="{{media_url}}{{row.caticonname}}" height="100" width="150" >
+       <br>
+       <b>{{row.catname}}</b>
+    </div>
+    </a>
+{% endfor %}       
+</div>
+</center>
+<br>
+<br>
+{% endblock %}

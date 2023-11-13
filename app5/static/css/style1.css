@@ -1,0 +1,29 @@
+body {
+    background-image: url("images/imageMenu.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    margin: 0%;
+    width: 100%;
+    height: 100vh;
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.089 alpha);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 1250px;
+    width: 100%;
+    border-radius: 5px;
+
+    backdrop-filter: blur(15px);
+    font-weight: 500;
+    padding: 1rem 1rem 2rem 1rem;
+    overflow: auto;
+}

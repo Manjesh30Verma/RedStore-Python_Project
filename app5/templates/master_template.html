@@ -1,0 +1,187 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initail-scale=1.0">
+    <title>RedStore</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+<title>RedStore</title>
+<link rel="icon" href="/static/images/favi.png">
+</head>
+<body>
+    <!--------------------header start--------------------------------------->
+    {% block header %}
+    {% endblock %}
+    {% block trackingid %}
+    <div class="container"
+        style="margin:0 15px 0 15 px; justify-content:right; font-size:20px; background-color:rgb(9, 9, 10);">
+        <div style="color: aliceblue;">
+            <img src="/static/images/mail.png" width="20px" style="padding:0 5px 0 0;" />
+            <span>example123@gmail.com</span>
+        </div>
+    </div>
+    {% endblock %}
+
+    <div class="header">
+        {% block logo %}
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="/static/images/logo.png" style="background-color: antiquewhite;" width="125px">
+                </div>
+                {% endblock %}
+                {% block nav %}
+
+                
+                
+                <nav>
+                    <ul id="MenuItems">
+                        <li><b><a class="active" href="/">HOME</a></b></li>
+                        <li><b><a class="active" href="/about/">ABOUT</a></b></li>
+                        <li><b><a class="active" href="/contact/">CONTACT</a></b></li>
+                        <li><b><a class="active" href="/register/">REGISTER</a></b></li>
+                        <li><b><a class="active" href="/login/">LOGIN</a></b></li>
+
+                    </ul>
+                </nav>
+                <div>
+                    <img src="/static/images/menu.png" style="background-color:white;" width="20px"
+                        onclick="menutoggle()" class="menu-icon">
+
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-----------Quote block---------------------------------->
+        {% block Quote %}
+        <div class="row" style="padding-left:50px;">
+            <div class="col-2">
+                <h1>Give Your Workout<br>A New Style</h1><br>
+                <p><b>Success isn't always about greatness. It's about consistency.
+                        Consistent<br>hard work gains success. Greatness will come.</b></p>
+                <a href="" class="btn">Explore Now &#8594;</a>
+            </div>
+            <div class="col-2">
+                <img src="/static/images/image1.png">
+            </div>
+        </div>
+        {% endblock %}
+        <!--------------------header end------------------->
+
+
+
+
+        <!---------------------------------------featured categories---------------------------->
+        {% block featured %}
+        <div class="categories">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="/static/images/category-1.jpg">
+                    </div>
+                    <div class="col-3">
+                        <img src="/static/images/category-2.jpg">
+                    </div>
+                    <div class="col-3">
+                        <img src="/static/images/category-3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+        <!------------------------------ offer --------------------------------->
+
+        {% block offer %}
+        <div class="offer">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="/static/images/logo1.jpg" class="offer-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}
+        {% block contentlayout %}
+        <div class="col-md-12">
+            {% block content %}
+
+            {% endblock %}
+            <br>
+        </div>
+        {% endblock %}
+        <!-------------------------------------- footer start ---------------------------------------------->
+        {% block footer %}
+        
+        <div class="footer">
+            <div>
+                <div class="row">
+                    <div class="footer-col-1">
+                        <h3>Download App</h3>
+                        <p>Download App for Android and ios mobile phone.</p>
+                        <div class="app-logo">
+                            <img src="/static/images/play-store.png">
+                            <img src="/static/images/app-store.png">
+                        </div>
+                    </div>
+                    <div class="footer-col-2">
+                        <img src="/static/images/logo-white.png">
+                        <p>Our Purpose Is To Sustainbly Make the Pleasure and Benefits of Sports Accessible to the Many.
+                        </p>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li>Coupons</li>
+                            <li>Blog</li>
+                            <li>Return Policy</li>
+                            <li>Join Affiliate</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Follow us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                            <li>Youtube</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </br>
+            <div>
+                <p class="copyright">&#169;2022-2023 All Rights Reserved By - RedStore -</p>
+            </div>
+            </div>
+        </div>
+       </div>
+        {% endblock %}
+        <!--------------------footer end-------------------------------------->
+
+
+        <!------------------------js for toggle menu------------------------>
+
+        <script>
+            var MenuItems = document.getElementById("MenuItems");
+
+            MenuItems.style.maxHeight = "0px";
+            function menutoggle() {
+                if (MenuItems.style.maxHeight == "0px") {
+                    MenuItems.style.maxHeight = "200px"
+                }
+                else {
+                    MenuItems.style.maxHeight = "0px"
+                }
+            }
+        </script>
+</body>
+
+</html>

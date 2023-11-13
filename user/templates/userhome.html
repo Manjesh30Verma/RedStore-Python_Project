@@ -1,0 +1,58 @@
+{% extends 'master_template.html' %}
+
+{% block content %}
+<center><br>
+<h1>Welcom to User Panel</h1>
+<br>
+</center>
+{% endblock %}
+
+
+{% block trackingid %}
+
+<div class="container" style="margin:0 15px 0 15 px; justify-content:right; font-size:20px; background-color: black;">
+    <div style="color: aliceblue;">
+        <img src="/static/images/mail.png" width="20px" style="padding:0 5px 0 0;"/>
+        <span>{{sunm}}</span>
+    </div>
+</div>
+{% endblock %}
+
+<!---------------navbar------------------>
+{% block nav %}
+    <nav>
+        <ul id="MenuItems">
+            <li><b><a href="/user/"> USER HOME</a></b></li>
+            <li><b><a href="/user/viewsproducts/">VIEW PRODUCTS</a></b></li>
+            <li><b><a href="/user/funds/">FUNDS</a></b></li>
+            <li><b><a href="/user/viewfunds/">VIEW FUNDS</a></b></li>
+            <li><b><a href="/user/cpuser/">CHANGE PASSWORD</a></b></li>
+            <li><b><a href="/user/epuser/">EDIT PROFILE</a></b></li>
+            <li><b><a href="/login/">LOGOUT</a></b></li>
+            
+        </ul>
+    </nav>
+{% endblock %}
+
+<!------------end navbar----------------------->
+
+{% block Quote %}
+{% endblock %}
+
+{% block featured %}
+{% endblock %}
+
+{% block Featured_products %}
+{% endblock %}
+
+{% block Latest %}
+{% endblock %}
+
+{% block testimonial %}
+{% endblock %}
+
+{% block brands %}
+{% endblock %}
+
+{% block offer %}
+{% endblock %}

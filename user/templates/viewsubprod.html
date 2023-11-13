@@ -1,0 +1,57 @@
+{% extends 'userhome.html' %}
+<head>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+{% block contentlayout %}
+<div class="container" style="display:inline-block; min-height:300px;">
+<div class="col-md-8" style="position:absolute;">
+   <br>
+   <h3>Sub Products >>>> {{catname}}</h3>
+   <center>
+   <div id="catmain">
+   {% for row in sclist %}
+       <a href="/user/viewsearchproducts/?subcatname={{row.subcatname}}">    
+       <div class="catmain_part">
+          <img src="{{media_url}}{{row.subcaticonname}}" height="100" width="150" >
+          <br>
+          <b>{{row.subcatname}}</b>
+       </div>
+       </a>
+   {% endfor %}       
+   </div>
+   </center>
+   <br>
+   <style>
+      #catmain
+      {
+       min-height:300px;
+       width:600px;
+      }
+      .catmain_part
+      {
+       height:150;
+       width:200;
+       float:left;
+      }
+      .catmain_part img
+      {
+       border:1px solid black;
+      }
+   </style>
+   <br>
+   
+</div>
+<div class="col-md-4" style="float:right;">
+<br> 
+<h3> Products List </h3>
+ {% for c in clist %}
+  <a href="/user/viewsubprod/?catname={{c.catname}}"><b>{{c.catname}}</b></a>
+  <br>
+  <br>
+ {% endfor %}
+</div>
+</div>
+
+
+{% endblock %}
