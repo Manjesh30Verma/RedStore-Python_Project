@@ -32,6 +32,6 @@ python -m django startproject project_name
 python manage.py makemigrations app_name
 python migrate
 
-# Create a superuser
+# Hit the project
 python manage.py runserver
 
